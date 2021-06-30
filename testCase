@@ -1,0 +1,46 @@
+from selenium import webdriver
+import time 
+
+driver = webdriver.Chrome("/Users/abidbakhtiyar/.spyder-py3/chromedriver")
+
+driver.set_page_load_timeout(10)
+
+#Main Login Page
+
+driver.get("https://ccpdata.org/ccp2field/")
+
+#UserName and Password
+driver.find_element_by_id("ContentPlaceHolder1_txtLogin").send_keys("abakhtiyar@alterhealthgroup.com")
+driver.find_element_by_id("ContentPlaceHolder1_txtPassword").send_keys("Alter123!")
+driver.find_element_by_id("ContentPlaceHolder1_btnSubmit").click()
+
+#Selecting the form type
+driver.find_element_by_id("UCSideNav_HyperLink29").click()
+
+#Filling out individual Form
+driver.find_element_by_id("ContentPlaceHolder1_rdlVisitTypeCode_0").click()
+driver.find_element_by_id("ContentPlaceHolder1_rdlVisitNumberCode_0").click()
+driver.find_element_by_id("ContentPlaceHolder1_rdlDurationCode_0").click()
+driver.find_element_by_id("ContentPlaceHolder1_txtMalePreschool").send_keys("1")
+driver.find_element_by_id("ContentPlaceHolder1_txtFemalePreschool").send_keys("1")
+driver.find_element_by_id("ContentPlaceHolder1_txtTransgenderPreschool").send_keys("1")
+driver.find_element_by_id("ContentPlaceHolder1_cblRaceCodes_1").click()
+driver.find_element_by_id("ContentPlaceHolder1_rdlPrimaryLanguageCode_0").click()
+driver.find_element_by_id("ContentPlaceHolder1_txtPrimaryLanguageOther").send_keys("test")
+driver.find_element_by_id("ContentPlaceHolder1_cblDisabilityCodes_0").click()
+driver.find_element_by_id("ContentPlaceHolder1_cblServiceLocationCodes_0").click()
+driver.find_element_by_id("ContentPlaceHolder1_txtServiceLocationOther").send_keys("test")
+driver.find_element_by_id("ContentPlaceHolder1_cblRiskCodes_0").click()
+driver.find_element_by_id("ContentPlaceHolder1_rdlEventParticipantCode_0").click()
+driver.find_element_by_id("ContentPlaceHolder1_cblBehavioralCodes_0").click()
+driver.find_element_by_id("ContentPlaceHolder1_cbCopingWell").click()
+driver.find_element_by_id("ContentPlaceHolder1_cblInformationAboutCodes_0").click()
+driver.find_element_by_id("ContentPlaceHolder1_cblTipsForCodes_0").click()
+driver.find_element_by_id("ContentPlaceHolder1_cblHealthyConnectionCodes_0").click()
+driver.find_element_by_id("ContentPlaceHolder1_txtFocusOther").send_keys("test")
+driver.find_element_by_id("ContentPlaceHolder1_rdlMaterialProvidedCode_0").click()
+driver.find_element_by_id("ContentPlaceHolder1_cblReferralCodes_0").click()
+driver.find_element_by_id("ContentPlaceHolder1_txtReferralOther").send_keys("test")
+driver.find_element_by_id("ContentPlaceHolder1_cbNoReferral").click()
+time.sleep(5)
+print("Successful Automation")

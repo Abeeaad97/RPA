@@ -1,11 +1,12 @@
-import pandas as pd 
+import pandas as pd
+'''
 #import baseFile
 pd.set_option("display.max_rows", 10, "display.max_columns", 100)
 df = pd.read_csv('iCarolTestData.csv')
 df = df.fillna(0)
 print(df)
 
-y=0
+y=1
 
 EmployID = None
 
@@ -189,4 +190,4 @@ chiAssessQ = {
 ChiAccept = df.iloc[y]["Child Referral Acceptance"]
 ParAccept = df.iloc[y]["Parent Referral Acceptance"]
 ################################Test Data#####################################
-
+'''

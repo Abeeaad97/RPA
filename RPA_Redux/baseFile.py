@@ -3,7 +3,7 @@ from OdcesForms import IndiLog
 from OdcesForms import AduAssess
 from OdcesForms import ChiAssess
 import time 
-import testData
+#import testData
 import pandas as pd 
 pd.set_option("display.max_rows", 10, "display.max_columns", 100)
 df = pd.read_csv('iCarolTestData.csv')
@@ -45,8 +45,7 @@ def workerID(df, y):
         print (df.iloc[y]["WorkerNum"])
     elif WorkerNum == 162494:
         df.at[y, "WorkerNum"] = 10469
-        
-        df.to_csv('ICarolTestData.csv', index = False)
+
     elif WorkerNum == 163489:
         df.at[y, "WorkerNum"] = 10468
         
@@ -236,14 +235,14 @@ with open('ICarolTestData.csv', 'r') as read_obj:
                 
             if int(df.iloc[y]["Report Version"]) == 60404:
                 IndiLog.start(y, df)
-                print("done " + str(df.iloc[y]["Report Version"]))
+                print("done " + str(df.iloc[y]["Report Version"]) + " Individual Log ")
             elif int(df.iloc[y]["Report Version"]) == 60433:
                 AduAssess.start(y, df)
-                print("done " + str(df.iloc[y]["Report Version"]))
+                print("done " + str(df.iloc[y]["Report Version"]) + " Adult Assessment Log ")
             elif int(df.iloc[y]["Report Version"]) == 60434:
                 ChiAssess.start(y, df)
-                print("done " + str(df.iloc[y]["Report Version"]))
+                print("done " + str(df.iloc[y]["Report Version"]) + " Child Assessment Log ")
             time.sleep(15)
             #counter+=1
-            print("done " + str(df.iloc[y]["Report Version"]))
+            #print("done " + str(df.iloc[y]["Report Version"]) + "Individual Log ")
             y += 1

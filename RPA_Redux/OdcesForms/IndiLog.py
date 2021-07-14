@@ -55,7 +55,7 @@ def MaleAge(data, counter):
     if int(data.iloc[counter]["MaleAdu"]) > 0: 
         SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_txtMaleAdult18").send_keys(int(data.iloc[counter]["MaleAdu"]))
     if int(data.iloc[counter]["MaleOldAdu"]) > 0: 
-        SeleniumAbid.driver.find_element_by_id("ContentPalceHolder1_txtMaleAdult40").send_keys(int(data.iloc[counter]["MaleOldAdu"]))
+        SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_txtMaleAdult40").send_keys(int(data.iloc[counter]["MaleOldAdu"]))
     if int(data.iloc[counter]["MaleSen"]) > 0: 
         SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_txtMaleAdult65").send_keys(int(data.iloc[counter]["MaleSen"]))
     
@@ -69,7 +69,7 @@ def FemaleAge(data, counter):
     if int(data.iloc[counter]["FemaleAdu"]) > 0: 
         SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_txtFemaleAdult18").send_keys(int(data.iloc[counter]["FemaleAdu"]))
     if int(data.iloc[counter]["FemaleOldAdu"]) > 0: 
-        SeleniumAbid.driver.find_element_by_id("ContentPalceHolder1_txtFemaleAdult40").send_keys(int(data.iloc[counter]["FemaleOldAdu"]))
+        SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_txtFemaleAdult40").send_keys(int(data.iloc[counter]["FemaleOldAdu"]))
     if int(data.iloc[counter]["FemaleSen"]) > 0: 
         SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_txtFemaleAdult65").send_keys(int(data.iloc[counter]["FemaleSen"]))
         
@@ -83,7 +83,7 @@ def TransAge(data, counter):
     if int(data.iloc[counter]["TransAdu"]) > 0: 
         SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_txtTransgenderAdult18").send_keys(int(data.iloc[counter]["TransAdu"]))
     if int(data.iloc[counter]["TransOldAdu"]) > 0: 
-        SeleniumAbid.driver.find_element_by_id("ContentPalceHolder1_txtTransgenderAdult40").send_keys(int(data.iloc[counter]["TransOldAdu"]))
+        SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_txtTransgenderAdult40").send_keys(int(data.iloc[counter]["TransOldAdu"]))
     if int(data.iloc[counter]["TransSen"]) > 0: 
         SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_txtTransgenderAdult65").send_keys(int(data.iloc[counter]["TransSen"]))       
             
@@ -212,17 +212,17 @@ def risks(data, counter):
 def eventreac(data, counter):
     
     
-    if int(data.iloc[counter]["NumofEventReacs"]) == 1:
+    if str(data.iloc[counter]["NumofEventReacs"]) == '1':
         SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_rdlEventParticipantCode_0").click()
-    elif int(data.iloc[counter]["NumofEventReacs"]) == 2:
+    elif str(data.iloc[counter]["NumofEventReacs"]) == '2':
         SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_rdlEventParticipantCode_1").click()
-    elif int(data.iloc[counter]["NumofEventReacs"]) == 3:
+    elif str(data.iloc[counter]["NumofEventReacs"]) == '3':
         SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_rdlEventParticipantCode_2").click()
-    elif int(data.iloc[counter]["NumofEventReacs"]) == 4:
+    elif str(data.iloc[counter]["NumofEventReacs"]) == '4':
         SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_rdlEventParticipantCode_3").click()
-    elif int(data.iloc[counter]["NumofEventReacs"]) == 5:
+    elif str(data.iloc[counter]["NumofEventReacs"]) == '5':
         SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_rdlEventParticipantCode_4").click()
-    elif int(data.iloc[counter]["NumofEventReacs"]) == 6:
+    elif str(data.iloc[counter]["NumofEventReacs"]) == '6 or more':
         SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_rdlEventParticipantCode_5").click()
         
     BehavioralReacs = str(data.iloc[counter]["Event Reactions - BEHAVIORAL"])
@@ -281,7 +281,7 @@ def eventreac(data, counter):
             SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_cblCognitiveCodes_1").click()
         elif x == 'difficulty concentrating':
             SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_cblCognitiveCodes_2").click()
-        elif x == 'difficulty rememebering things':
+        elif x == 'difficulty remembering things':
             SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_cblCognitiveCodes_3").click()
         elif x == 'difficulty making decisions':
             SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_cblCognitiveCodes_4").click()

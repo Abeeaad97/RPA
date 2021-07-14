@@ -40,22 +40,38 @@ def groupNumofPeople(daFra, counter):
     if int(daFra.iloc[counter]["GroupMinor"]) > 0:
         SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_txtParticipant18").send_keys(str(daFra.iloc[counter]["GroupMinors"]))
     if int(daFra.iloc[counter]["GroupAdult"]) > 0:
-        SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_txtParticipant64").send_keys(str(daFra.iloc[counter]["GroupAdultd"]))
+        SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_txtParticipant64").send_keys(str(daFra.iloc[counter]["GroupAdults"]))
     if int(daFra.iloc[counter]["GroupSenior"]) > 0:
         SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_txtParticipant65").send_keys(str(daFra.iloc[counter]["GroupSeniors"]))
 def groupCompo(daFra, counter):
-    if str(daFra.iloc[counter]["GroupIdentities"]) == 'Children or youth (Under age 18) CHECK is yes':
-        None
+    if str(daFra.iloc[counter]["GroupIdentities"]) == 'Children or youth (Under age 18) CHECK if yes':
+        SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_rdlIdentitiesCode_0").click()
+    if str(daFra.iloc[counter]["GroupIdentities"]) == 'Adult survivors (adults who were directly affected by the disaster)? CHECK if yes':
+        SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_rdlIdentitiesCode_1").click()
     elif str(daFra.iloc[counter]["GroupIdentities"]) == 'Public safety workers and first responders (e.g.  police  fire  emergency medical services  rescue)? CHECK  if yes.':
-        None
+        SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_rdlIdentitiesCode_2").click()
+    elif str(daFra.iloc[counter]["GroupIdentities"]) == 'Other recovery workers(e.g. health care disaster relief social services)? CHECK if yes':
+        SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_rdlIdentitiesCode_3").click()
+    elif str(daFra.iloc[counter]["GroupIdentities"]) == 'Was the group composed of a mixture of the above or none of the above (i.e. no clear group identity)? CHECK if yes':
+        SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_rdlIdentitiesCode_4").click()
 def groupRaceEth(daFra, counter):
-    None
+    if str(daFra.iloc[counter]["Race/Ethnicity"]) == 'American Indian/Alaska Native':
+        SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_cblRaceCodes_0").click()
+    elif str(daFra.iloc[counter]["Race/Ethnicity"]) == 'Native Hawaiian/Other Pacific Islander':
+        SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_cblRaceCodes_1").click()
+    elif str(daFra.iloc[counter]["Race/Ethnicity"]) == 'Asian':
+        SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_cblRaceCodes_2").click()
+    elif str(daFra.iloc[counter]["Race/Ethnicity"]) == 'White':
+        SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_cblRaceCodes_3").click()
+    elif str(daFra.iloc[counter]["Race/Ethnicity"]) == 'Black or African American':
+        SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_cblRaceCodes_4").click()
+    elif str(daFra.iloc[counter]["Race/Ethnicity"]) == 'Hispanic or Latino':
+        SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_cblRaceCodes_5").click()
 def groupDis(daFra, counter):
     None 
 def groupFocus(daFra, counter):
     None
     
-
 
 def start(y, df):
     counter = y

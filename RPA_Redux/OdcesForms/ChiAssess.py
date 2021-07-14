@@ -11,7 +11,7 @@ def ChiAgeGen(dataF, counter):
     elif dataF.iloc[counter]["Child Age"] == 'adolescent (12-17 years)':
         SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_rdlChildAgeCode_2").click()
     
-    SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_txtGradeLevel").send_keys(int(dataF.iloc[counter]["Grade Level"]))
+    SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_txtGradeLevel").send_keys(str(dataF.iloc[counter]["Grade Level"]))
     
     if dataF.iloc[counter]["Child Gender"] == 'Male':
         SeleniumAbid.driver.find_element_by_id("ContentPlaceHolder1_rdlSexCodes_0").click()

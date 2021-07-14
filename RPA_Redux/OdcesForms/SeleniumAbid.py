@@ -1,3 +1,3 @@
 from selenium import webdriver
-driver = webdriver.Chrome("C:/Users/Abid B/Odces_RPA/Drivers/chromedriver.exe")
+driver = webdriver.Chrome("C:/Users/abidb/Downloads/RPA-main/RPA-main/RPA_Redux/chromedriver.exe")
 
